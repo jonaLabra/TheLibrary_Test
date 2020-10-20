@@ -1,0 +1,51 @@
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="row">
+            @include('admin.sidebar')
+
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">Book {{ $book->id }}</div>
+                    <div class="card-body">
+
+                        <a href="{{ url('/books') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/books/' . $book->id . '/edit') }}" title="Edit Book"><button class="btn btn-primary btn-sm"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button></a>
+
+                        <form method="POST" action="{{ url('books' . '/' . $book->id) }}" accept-charset="UTF-8" style="display:inline">
+                            {{ method_field('DELETE') }}
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Book" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                        </form>
+                        <br/>
+                        <br/>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th>ID</th><td>{{ $book->id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th> Name </th><td> {{ $book->Name }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Author </th><td> {{ $book->Author }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Category </th><td> {{ $book->Category }} </td>
+                                    </tr>
+                                    <tr>
+                                        <th> Status </th><td> {{ $book->Status }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
