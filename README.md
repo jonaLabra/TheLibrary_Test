@@ -2,7 +2,7 @@
 
 
 ## Instalacion Proyecto
-1.- instalar el repositorio desde github, abrir una terminal y poner el siguiente comando.
+<h1>1.- instalar el repositorio desde github, abrir una terminal y poner el siguiente comando.</h1>
 $~ git clone https://github.com/jonaLabra/TheLibrary_Test.git
 2.- Abrir el archivo descargado desde un editor de texto que se desee (visual studio,sublimeText,etc..),
     abrir el archivo .env y configurar las variables siguientes agregando las credenciales de su base de datos:
